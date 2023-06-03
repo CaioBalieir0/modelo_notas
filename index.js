@@ -8,21 +8,28 @@ let reprovou = [];
 
 function cadastrarF() {
   let nome = document.getElementById("inpNome").value;
-  let nota = document.getElementById("inpNota").value;
+  let nota1 = parseInt(document.getElementById("inpNota1").value);
+  let nota2 = parseInt(document.getElementById("inpNota2").value);
+  let media = (nota1 + nota2) / 2;
+  console.log(nota1);
+  console.log(nota2);
+  console.log(media);
 
-  let res = nota <= 5 ? "Reprovado" : "Aprovado";
+  let res = media <= 5 ? "Reprovado" : "Aprovado";
 
   let obj = {
     nome: nome,
-    nota: nota,
+    nota1: nota1,
+    nota2: nota2,
+    media: media,
     situacao: res,
   };
   todas.push(obj);
 
-  if (nota <= 5) {
+  if (media <= 5) {
     reprovou.push(obj);
   }
-  if (nota > 5) {
+  if (media > 5) {
     passou.push(obj);
   }
 
@@ -40,7 +47,7 @@ function imprimirF() {
     table.innerHTML += `
         <tr>
             <td>${todas[i].nome}</td>
-            <td>${todas[i].nota}</td>
+            <td>${todas[i].media}</td>
             <td>${todas[i].situacao}</td>
         </tr>
         `;
@@ -55,7 +62,7 @@ function filtroF() {
       table.innerHTML += `
         <tr>
             <td>${passou[i].nome}</td>
-            <td>${passou[i].nota}</td>
+            <td>${passou[i].media}</td>
             <td>${passou[i].situacao}</td>
         </tr>
         `;
@@ -63,7 +70,7 @@ function filtroF() {
       table.innerHTML += `
         <tr>
             <td>${reprovou[i].nome}</td>
-            <td>${reprovou[i].nota}</td>
+            <td>${reprovou[i].media}</td>
             <td>${reprovou[i].situacao}</td>
         </tr>
         `;
@@ -71,7 +78,7 @@ function filtroF() {
       table.innerHTML += `
         <tr>
             <td>${todas[i].nome}</td>
-            <td>${todas[i].nota}</td>
+            <td>${todas[i].media}</td>
             <td>${todas[i].situacao}</td>
         </tr>
         `;
@@ -107,5 +114,5 @@ function keyF() {
   }
 }
 cadastrar.addEventListener("click", cadastrarF);
-document.getElementById("inpNota").addEventListener("keydown", keyF);
+document.getElementById("inpNota1").addEventListener("keydown", keyF);
 pesquisar.addEventListener("click", filtroF);
