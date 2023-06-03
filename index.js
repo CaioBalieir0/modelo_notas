@@ -47,6 +47,8 @@ function imprimirF() {
     table.innerHTML += `
         <tr>
             <td>${todas[i].nome}</td>
+            <td>${todas[i].nota1}</td>
+            <td>${todas[i].nota2}</td>
             <td>${todas[i].media}</td>
             <td>${todas[i].situacao}</td>
         </tr>
@@ -62,6 +64,8 @@ function filtroF() {
       table.innerHTML += `
         <tr>
             <td>${passou[i].nome}</td>
+            <td>${passou[i].nota1}</td>
+            <td>${passou[i].nota2}</td>
             <td>${passou[i].media}</td>
             <td>${passou[i].situacao}</td>
         </tr>
@@ -70,6 +74,8 @@ function filtroF() {
       table.innerHTML += `
         <tr>
             <td>${reprovou[i].nome}</td>
+            <td>${reprovou[i].nota1}</td>
+            <td>${reprovou[i].nota2}</td>
             <td>${reprovou[i].media}</td>
             <td>${reprovou[i].situacao}</td>
         </tr>
@@ -78,6 +84,8 @@ function filtroF() {
       table.innerHTML += `
         <tr>
             <td>${todas[i].nome}</td>
+            <td>${todas[i].nota1}</td>
+            <td>${todas[i].nota2}</td>
             <td>${todas[i].media}</td>
             <td>${todas[i].situacao}</td>
         </tr>
